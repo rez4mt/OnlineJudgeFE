@@ -2,7 +2,6 @@
 import {
   About,
   ACMRank,
-  Announcements,
   ApplyResetPassword,
   FAQ,
   Home,
@@ -17,7 +16,6 @@ import {
   UserHome
 } from '../views'
 
-import * as Contest from '@oj/views/contest'
 import * as Setting from '@oj/views/setting'
 
 export default [
@@ -68,50 +66,6 @@ export default [
     path: '/status/:id/',
     meta: {title: 'Submission Details'},
     component: SubmissionDetails
-  },
-  {
-    name: 'contest-list',
-    path: '/contest',
-    meta: {title: 'Contest List'},
-    component: Contest.ContestList
-  },
-  {
-    name: 'contest-details',
-    path: '/contest/:contestID/',
-    component: Contest.ContestDetails,
-    meta: {title: 'Contest Details'},
-    children: [
-      {
-        name: 'contest-submission-list',
-        path: 'submissions',
-        component: SubmissionList
-      },
-      {
-        name: 'contest-problem-list',
-        path: 'problems',
-        component: Contest.ContestProblemList
-      },
-      {
-        name: 'contest-problem-details',
-        path: 'problem/:problemID/',
-        component: Problem
-      },
-      {
-        name: 'contest-announcement-list',
-        path: 'announcements',
-        component: Announcements
-      },
-      {
-        name: 'contest-rank',
-        path: 'rank',
-        component: Contest.ContestRank
-      },
-      {
-        name: 'acm-helper',
-        path: 'helper',
-        component: Contest.ACMContestHelper
-      }
-    ]
   },
   {
     name: 'acm-rank',
